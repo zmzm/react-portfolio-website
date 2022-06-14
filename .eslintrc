@@ -8,6 +8,7 @@
   "extends": [
     "airbnb-base",
     "eslint:recommended",
+    "plugin:react/recommended",
     "plugin:import/recommended",
     "plugin:prettier/recommended"
   ],
