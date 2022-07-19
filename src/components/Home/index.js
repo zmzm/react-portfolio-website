@@ -11,11 +11,11 @@ const Home = () => {
       <div className="text-zone">
         <h1>
           Hi <br /> I&apos;m
+          <img alt="developer" src={LogogTitle} />
+          lobodan
+          <br />
+          JS developer
         </h1>
-        <img alt="developer" src={LogogTitle} />
-        lobodan
-        <br />
-        JS developer
         <Link to="/contact" calssName="flat-butoon">
           CONTACT ME
         </Link>
