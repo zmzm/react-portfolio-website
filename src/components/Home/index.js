@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import LogogTitle from '../../assets/images/logo-s.png';
 import AnimatedLetters from '../AnimatedLetters';
+import Logo from './Logo';
 
 import './index.scss';
 
 const Home = () => {
-  const [letterClass] = useState('text-animate');
+  const [letterClass, setLetterClass] = useState('text-animate');
   const nameArray = ['l', 'a', 'd', 'i', 's', 'l', 'a', 'v'];
   const helloArray = ['H', 'i,'];
   const iArray = ['I', "'m"];
@@ -27,6 +28,15 @@ const Home = () => {
     '.',
   ];
 
+  useEffect(() => {
+    const timeOut = setTimeout(() => {
+      setLetterClass('text-animate-hover');
+    }, 4000);
+    return () => {
+      clearTimeout(timeOut);
+    };
+  }, []);
+
   return (
     <div className="container home-page">
       <div className="text-zone">
@@ -44,13 +54,13 @@ const Home = () => {
           />
           <img alt="developer" src={LogogTitle} />
           <AnimatedLetters
-            offset={15}
+            offset={5}
             lettersArray={nameArray}
             letterClass={letterClass}
           />
           <br />
           <AnimatedLetters
-            offset={nameArray.length + 15}
+            offset={nameArray.length + 5}
             lettersArray={jobArray}
             letterClass={letterClass}
           />
@@ -59,6 +69,7 @@ const Home = () => {
           CONTACT ME
         </Link>
       </div>
+      <Logo />
     </div>
   );
 };
