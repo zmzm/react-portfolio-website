@@ -3,7 +3,22 @@
   position: absolute;
   top: 0;
   bottom: 0;
+  left: auto;
   right: 15%;
   width: 400px;
   height: 600px;
+  margin: auto;
+  opacity: 0;
+
+  .solid-logo {
+    position: absolute;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transform: rotateZ(30deg);
+    z-index: 1;
+  }
 }
