@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Loader from 'react-loaders';
 
 import LogogTitle from '../../assets/images/logo-s.png';
 import AnimatedLetters from '../AnimatedLetters';
@@ -38,39 +39,42 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container home-page">
-      <div className="text-zone">
-        <h1>
-          <AnimatedLetters
-            offset={1}
-            lettersArray={helloArray}
-            letterClass={letterClass}
-          />
-          <br />
-          <AnimatedLetters
-            offset={helloArray.length + 1}
-            lettersArray={iArray}
-            letterClass={letterClass}
-          />
-          <img alt="developer" src={LogogTitle} />
-          <AnimatedLetters
-            offset={5}
-            lettersArray={nameArray}
-            letterClass={letterClass}
-          />
-          <br />
-          <AnimatedLetters
-            offset={nameArray.length + 5}
-            lettersArray={jobArray}
-            letterClass={letterClass}
-          />
-        </h1>
-        <Link to="/contact" className="flat-button">
-          CONTACT ME
-        </Link>
+    <>
+      <div className="container home-page">
+        <div className="text-zone">
+          <h1>
+            <AnimatedLetters
+              offset={1}
+              lettersArray={helloArray}
+              letterClass={letterClass}
+            />
+            <br />
+            <AnimatedLetters
+              offset={helloArray.length + 1}
+              lettersArray={iArray}
+              letterClass={letterClass}
+            />
+            <img alt="developer" src={LogogTitle} />
+            <AnimatedLetters
+              offset={5}
+              lettersArray={nameArray}
+              letterClass={letterClass}
+            />
+            <br />
+            <AnimatedLetters
+              offset={nameArray.length + 5}
+              lettersArray={jobArray}
+              letterClass={letterClass}
+            />
+          </h1>
+          <Link to="/contact" className="flat-button">
+            CONTACT ME
+          </Link>
+        </div>
+        <Logo />
       </div>
-      <Logo />
-    </div>
+      <Loader type="pacman" />
+    </>
   );
 };
 
