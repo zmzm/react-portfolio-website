@@ -44,25 +44,25 @@ const Home = () => {
         <div className="text-zone">
           <h1>
             <AnimatedLetters
-              offset={1}
+              delay={1}
               lettersArray={helloArray}
               letterClass={letterClass}
             />
             <br />
             <AnimatedLetters
-              offset={helloArray.length + 1}
+              delay={helloArray.length + 1}
               lettersArray={iArray}
               letterClass={letterClass}
             />
             <img alt="developer" src={LogogTitle} />
             <AnimatedLetters
-              offset={5}
+              delay={5}
               lettersArray={nameArray}
               letterClass={letterClass}
             />
             <br />
             <AnimatedLetters
-              offset={nameArray.length + 5}
+              delay={nameArray.length + 5}
               lettersArray={jobArray}
               letterClass={letterClass}
             />

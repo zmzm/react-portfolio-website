@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import './index.scss';
 
-const AnimatedLetters = ({ letterClass, lettersArray, offset }) => (
+const AnimatedLetters = ({ letterClass, lettersArray, delay }) => (
   <span>
     {lettersArray.map((char, index) => (
       <span
         key={`${char}_${index}`}
-        className={`${letterClass} _${index + offset}`}
+        className={`${letterClass} _${index + delay}`}
       >
         {char}
       </span>
@@ -19,7 +19,7 @@ const AnimatedLetters = ({ letterClass, lettersArray, offset }) => (
 AnimatedLetters.propTypes = {
   letterClass: PropTypes.string.isRequired,
   lettersArray: PropTypes.arrayOf(PropTypes.string).isRequired,
-  offset: PropTypes.number.isRequired,
+  delay: PropTypes.number.isRequired,
 };
 
 export default AnimatedLetters;

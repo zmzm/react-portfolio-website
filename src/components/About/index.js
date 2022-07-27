@@ -33,6 +33,7 @@ const About = () => {
         <div className="text-zone">
           <h1>
             <AnimatedLetters
+              delay={7}
               lettersArray={aboutLetters}
               letterClass={letterClass}
             />
